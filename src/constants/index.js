@@ -73,7 +73,7 @@ export const footerLinks = [
                 link: "#"
             },
             {
-                name: "USa",
+                name: "USA",
                 link: "#"
             },
         ]
