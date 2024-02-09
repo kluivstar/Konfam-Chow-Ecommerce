@@ -20,22 +20,22 @@ const Header = () => {
   })
   return (
     <header 
-     className={` w-full ${isActive ? "bg-white" : "bg-primary"} z-10 fixed transition ${styles.paddingX}`}>
-        <div className='flex items-center flex-row justify-between'>
+     className={` w-full ${isActive ? "bg-white" : "bg-primary"} transition `}>
+        <div className='flex items-center flex-row justify-between sm:px-20'>
           {/* Logo */}
           <div>
             <img className='w-[80px]' src={Logo}/>
           </div>
           {/* Menu */}
-          <ul className='flex-row items-center justify-center sm:flex hidden '>
+          <ul className='flex-row items-center justify-end sm:flex hidden justify-items-end'>
             {navLinks.map((nav, index) => (
-              <li className={`font-poppins text-white text-[14px] ${index === navLinks.length - 1 ? 'mr-0' : 'mr-10'} cursor-pointer  hover:text-slate-300 transition-all`} key={nav.id}>
+              <li className={`font-poppins text-white text-[14px] text-right ${index === navLinks.length - 1 ? 'mr-0' : 'mr-10'} cursor-pointer  hover:text-slate-300 transition-all`} key={nav.id}>
                 <a>{nav.title}</a>
               </li>
             ))}
           </ul>
           {/* Cart logo */}
-          <div>
+          <div className='absolute sm:relative sm:top-0 right-10 top-7'>
               <BsBag className='text-xl text-white'/>
           </div>
           {/* Mobile menu image */}
