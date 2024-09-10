@@ -19,13 +19,15 @@ const Header = () => {
     window.scrollY > 60 ? setIsActive(true) : setIsActive(false)
   })
   return (
-    <header 
-     className={` w-full ${isActive ? "bg-white" : "bg-primary"} transition `}>
-        <div className='flex items-center flex-row justify-between sm:px-20'>
+    <nav 
+     className={`${styles.paddingX} w-full ${isActive ? "bg-white" : "bg-primary"} transition `}>
+        <div className='flex items-center flex-row justify-between'>
+
           {/* Logo */}
           <div>
-            <img className='w-[80px]' src={Logo}/>
+            <img className='w-[80px]' alt='' src={Logo}/>
           </div>
+          
           {/* Menu */}
           <ul className='flex-row items-center justify-end sm:flex hidden justify-items-end'>
             {navLinks.map((nav, index) => (
@@ -34,6 +36,7 @@ const Header = () => {
               </li>
             ))}
           </ul>
+
           {/* Cart logo */}
           <div className='absolute sm:relative sm:top-0 right-10 top-7'>
               <BsBag className='text-xl text-white'/>
@@ -42,7 +45,7 @@ const Header = () => {
           
           {/* if state is !prev "close" displays" : menu is displayed(which is the default) */}
           <div className='sm:hidden flex justify-end items-center'>
-            <img className='p-2' onClick={() => setToggle((prev) => 
+            <img className='p-2' alt='' onClick={() => setToggle((prev) => 
                !prev
               )} src={toggle ? close : menu }/>
           </div>
@@ -60,7 +63,7 @@ const Header = () => {
             </ul>
           </div>
         </div>
-    </header>
+    </nav>
   )
 }
 

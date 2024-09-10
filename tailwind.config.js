@@ -6,15 +6,11 @@ module.exports = {
     extend: {
       colors: {
         primary: "#ff3131",
+        header:  "#ff3131",
+        footer:  "#FFFFFF",
         secondary: "#F5E6E0",
         dimWhite: "rgba(255, 255, 255, 0.7)",
         
-      },
-      container: {
-        padding: {
-          DEFAULT: '30px',
-          lg: '0',
-        },
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
@@ -24,7 +20,7 @@ module.exports = {
       sm: "640px",
       md: "768px",
       lg: "1024px",
-      xl: "1440px",
+      xl: "1280px",
     },
   },
   plugins: [],
