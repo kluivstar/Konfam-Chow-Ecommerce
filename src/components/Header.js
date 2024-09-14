@@ -54,7 +54,7 @@ const Header = () => {
           <div className={`${toggle ? "flex" : "hidden"} sm:hidden w-full leading-10 p-6 rounded-sm top-20 absolute bg-primary transition-all duration-300 cursor-pointer text-white `}>
             <ul>
             {navLinks.map((nav, index) => (
-              <li className={`font-poppins text-white text-[14px] items-center justify-center ${index === navLinks.length - 1 ? 'mr-0' : 'mr-10'} cursor-pointer hover:text-slate-300 hover:underline transition-all`} key={nav.id}>
+              <li className={`font-poppins text-white text-[14px] items-center justify-center  cursor-pointer hover:text-slate-300  transition-all`} key={nav.id}>
                 <a href={`#${nav.id}`}>
                   {nav.title}
                   </a>
