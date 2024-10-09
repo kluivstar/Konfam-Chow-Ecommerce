@@ -3,18 +3,19 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 /// pages
 import Home from './pages/Home'
-import Productdetails from './pages/ProductDetails'
+import CartContextProvider from './contexts/CartContext'
+import ProductDetails from './pages/ProductDetails'
 
 const App = () => {
   return (
-    <div>
+    <CartContextProvider>
       <Router>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/product/id' element={<Productdetails/>}/>
+          <Route path='/products/:id' element={<ProductDetails/>}/>
         </Routes>
       </Router>
-    </div>
+    </CartContextProvider>
   )
 }
 

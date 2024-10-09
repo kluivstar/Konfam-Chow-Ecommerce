@@ -2,18 +2,22 @@ import React from 'react'
 /// import styles
 import styles from '../constants/style'
 /// import constant
-import { footerLinks } from '../constants'
+import { footerLinks } from '../constants/navLinks'
 /// import logo
-import logo from '../assets/logo-white.png'
+import logo from '../assets/logo.png'
 
 const Footer = () => {
   return (
-    <footer className='sm:px-20 sm:py-20 p-5 flex-col bg-primary'>
+    <footer className='sm:px-20 sm:py-20 p-5 flex-col bg-slate-800'>
       <div className='flex flex-col md:flex-row justify-between w-full'>
+
         {/* Logo */}
-        <div className='flex flex-col justify-start'>
-          <img className='w-[25%] sm:w-[25%] object-contain justify-start' src={logo}/>
-          <h3 className={`${styles.paragraph}`}>Taste busters</h3>
+        <div className='flex flex-col items-start justify-start align-start pl-0 ml-0'>
+          <div className="items-start justify-start text-left">
+            <img alt="hello" className='w-[20%] sm:w-[20%] ' src={logo}/>
+            <h3 className="text-slate-400 font-poppins text-[12px]">Taste busters</h3>
+          </div>
+
         </div>
         {/* Links */}
         <div className='flex flex-row justify-between flex-wrap flex-[1.5] w-full'>

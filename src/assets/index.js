@@ -4,6 +4,10 @@ import burger3 from './burger-3.png';
 import burger4 from './burger-4.png';
 import burger5 from './burger-5.png';
 import burger6 from './burger-6.png';
+import burger7 from './burger-7.png';
+import burger8 from './burger-8.png';
+
+
 
 export {
     burger1,
@@ -11,5 +15,7 @@ export {
     burger3,
     burger4,
     burger5,
-    burger6
+    burger6,
+    burger7,
+    burger8
 };
