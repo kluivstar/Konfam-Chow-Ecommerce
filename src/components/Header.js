@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 /// import nav links
 import { navLinks } from '../constants/navLinks'
 /// import react icon
@@ -10,15 +10,19 @@ import close from "../assets/close.svg"
 import Logo from '../assets/logo-white.png'
 import menu from '../assets/menu.svg'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../contexts/CartContext'
 
 const Header = () => {
   const [toggle, setToggle] = useState(false)
   const [isActive, setIsActive] = useState(false)
+  
+  // Import Cart Context
+  const [products, setProducts, cart, setCart, addToCart] = useContext(CartContext)
+  
   /// ///Here header color change on scroll
-  /// When the user scrolls the page, the event listener callback function is executed. Inside the callback function, it checks if the window.scrollY value is greater than 60. If it is, the setIsActive function is called with the argument true, otherwise it is called with the argument false.
-
   useEffect(() => {
     const handleScroll = () => {
+      // if scroll position change isActive is truthy
       if(window.scrollY){
         setIsActive(true)
       }else {
@@ -52,7 +56,7 @@ const Header = () => {
 
           {/* Cart logo */}
           <div className='absolute sm:relative font-poppins flex sm:top-0 right-16 top-9'>
-              <BsBag className='text-xl text-white relative'/><span className='absolute rounded-full px-1 text-[12px] bottom-2 right-3 bg-slate-100 black'>0</span>
+              <BsBag className='text-xl text-white relative'/><span className='absolute rounded-full px-1 text-[12px] bottom-2 right-3 bg-slate-100 black'>{cart.length}</span>
           </div>
           
           {/* Mobile menu image */}

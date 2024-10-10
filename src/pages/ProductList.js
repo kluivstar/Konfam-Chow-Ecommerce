@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import bgImg from '../assets/bgImg.jpg'
+
 const ProductList = ({id, flavors, title, price, description, image, more}) => {
   //const [isHovered, setHovered] = useState(false)
   const [insideButton, setInsideButton] = useState("what's Inside?")
@@ -12,7 +13,7 @@ const ProductList = ({id, flavors, title, price, description, image, more}) => {
     setInsideButton("What's Inside?")
   }
   return (
-    <div className='z-[10] flex flex-col flex-wrap font-poppins sm:flex-col md:flex-col lg:flex-col bg-orange-100 p-2 rounded py-16 px-10 w-[300px]'>
+    <div className='z-[10] flex flex-col justify-between font-poppins sm:flex-col md:flex-col lg:flex-col bg-orange-100 p-2 rounded py-16 px-10 w-[360px]'>
       
       {/* product img */}
         <div className="relative w-full h-[200px]">
@@ -21,7 +22,7 @@ const ProductList = ({id, flavors, title, price, description, image, more}) => {
         <div className='flex flex-row justify-between py-2'>
 
           {/* product data */}
-          <div className="flex flex-col">
+          <div className="flex flex-col items-start">
             <h1>{title}</h1>
             <span className='text-slate-600'>${price}</span>
             <Link to={`/products/${id}`}class="">

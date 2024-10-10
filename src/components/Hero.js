@@ -13,7 +13,7 @@ const Hero = () => {
               </h1>
             </div>
             <p className='text-gray-800 text-[15px] sm:px-10 text-left sm:text-left sm:-ml-10'>At Konfam Chow, our burgers are more than just a meal - they're an experience! Crafted with the freshest ingredients, every bite of our signature burgers bursts with flavor. </p>
-            <button className='hidden xl:block bg-slate-800  text-white rounded px-5 py-2 hover:bg-slate-600 font-poppins text-[16px] mt-5'>Explore
+            <button className='hidden xl:block bg-slate-800  text-white rounded px-5 py-2 hover:bg-slate-600 font-poppins text-[13px] mt-5'>Explore Menu
 
             </button>
         </div>
@@ -23,11 +23,11 @@ const Hero = () => {
             <img className='w-1/1 lg:w-[50%]mb-10 relative z-[5]  sm:mb-0' src={heroImg} alt=""/>
             
             {/* Gradient */}
-            <div className='absolute z-[0] w-[50%] h-[50%] right-10 bottom-0 blue__gradient md:bottom-0 md:absolute'>
+            <div className='absolute z-[0] w-[50%] h-[50%] right-10 bottom-0 xl:top-0 blue__gradient md:bottom-0 md:absolute'>
 
             {/* Explore Button */}
             </div>
-            <button className='flex m-auto sm:hidden bg-slate-800 text-white rounded px-10 hover:bg-slate-600 text-[16px] mt-10'>Explore Menu</button>
+            <button className='flex m-auto sm:hidden bg-slate-800 text-white rounded px-10 hover:bg-slate-600 text-[12px] mt-10'>Explore Menu</button>
         </div>
       </div>
     </section>

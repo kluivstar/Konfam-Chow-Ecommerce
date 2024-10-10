@@ -13,7 +13,16 @@ import {burger1,
 export const CartContext = createContext()
 
 const CartContextProvider = ({children}) => {
-    const [cartItem, setCartItem] = useState("")
+    // State for cart
+    const [cart, setCart] = useState([])
+
+    // Function to add a product to cart
+    const addToCart = (product) => {
+        setCart((prevCart) => [...prevCart, product])
+        console.log(cart)
+    }
+
+    // State for products
     const [products, setProducts] = useState([
         {
             id: 1,
@@ -76,7 +85,7 @@ const CartContextProvider = ({children}) => {
         }
     ])
   return (
-    <CartContext.Provider value={[products, cartItem, setCartItem, setProducts]}>{children}</CartContext.Provider>
+    <CartContext.Provider value={[products, setCart, cart, setProducts, addToCart]}>{children}</CartContext.Provider>
   )
 }
 
