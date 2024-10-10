@@ -15,6 +15,7 @@
     "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",
     "styled-components": "^6.1.13",
+    "use-local-storage-state": "^19.4.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
