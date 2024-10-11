@@ -16,6 +16,10 @@ const ProductDetails = () => {
   //Find products by ID
   const product = products.find((prod) => prod.id === parseInt(id))
 
+  const handleAddToCart = (product) => {
+    setCart((prevCart) => [...prevCart, product])
+    console.log(cart)
+}
   return (
     <div>
       <Header/>
@@ -31,7 +35,7 @@ const ProductDetails = () => {
           <p className='text-primary pb-10'>{product.description}</p>
           <span className='text-slate-900' >Price: ${product.price}</span>
           <p className='text-[13px] text-slate-600'>Flavours: {product.flavors}</p>
-          <button className="bg-slate-800 transition text-white rounded px-2 py-2 hover:bg-slate-600 font-poppins text-[13px]" onClick={()=> addToCart(product)}>Grab This</button>
+          <button className="bg-slate-800 transition text-white rounded px-2 py-2 hover:bg-slate-600 font-poppins text-[13px]" onClick={()=> handleAddToCart(product)}>Grab This</button>
         </div>
       </div>
       <Footer/>

@@ -1,8 +1,18 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { CartContext } from '../contexts/CartContext'
+import useLocalStorageState from 'use-local-storage-state';
+
 const Sidebar = () => {
       // Gets the products and cart from context
     const [cart, setCart, cartToggle, setCartToggle] = useContext(CartContext)
+    const [cartCount, setCartCount] = useState(false)
+
+    const handleIncreaseCount = () =>{
+        setCartCount((prev) => prev + 1)
+    }
+    const handleDecreaseCount = () =>{
+        setCartCount((prev) => prev - 1)
+    }
     return (
         <section className=''>
             <div
@@ -21,11 +31,12 @@ const Sidebar = () => {
                             </div>
                             <div class="">
                                 <h1 className='text-slate-50 text-[19px]'>{item.title}</h1>
-                                <span>{item.description}</span>
+                                <span className='text-slate-200 text-[12px]'>{item.description}</span>
                                 <div>
                                     <div>
-                                        <button type="" class="">Count</button>
-                                        <button type="" class=""></button>
+                                        <button onClick={handleIncreaseCount} type="" class="">+</button>
+                                        {cartCount}
+                                        <button onClick={handleDecreaseCount} type="" class="">-</button>
                                     </div>
                                     <span>{item.price}</span>
                                 </div>
@@ -34,7 +45,7 @@ const Sidebar = () => {
                         ))
                 ) : (
                     <div className='text-center text-white'>Your cart is empty.</div>
-                  )}
+                    )}
                 </div>
                 
         </section>

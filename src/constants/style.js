@@ -1,5 +1,4 @@
 const styles = {
-    
     boxWidth: "w-full xl:max-w-[1280px]",
     paragraph: "text-[14px] font-normmal font-poppins text-black",
 

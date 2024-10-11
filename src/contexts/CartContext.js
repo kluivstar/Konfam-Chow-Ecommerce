@@ -1,6 +1,5 @@
 import React, { createContext } from 'react'
 import { useState } from 'react'
-import useLocalStorageState from 'use-local-storage-state';
 
 import {burger1,
     burger2,
@@ -15,16 +14,10 @@ export const CartContext = createContext()
 
 const CartContextProvider = ({children}) => {
     // State for cart
-    const [cart, setCart] = useLocalStorageState("cart", { defaultValue: []})
-
-    // Cart toggle
-    const [cartToggle, setCartToggle] = useState(false)
+    const [cart, setCart] = useState([])
 
     // Function to add a product to cart
-    const addToCart = (product) => {
-        setCart((prevCart) => [...prevCart, product])
-        console.log(cart)
-    }
+    
 
     // State for products
     const [products, setProducts] = useState([
@@ -88,9 +81,9 @@ const CartContextProvider = ({children}) => {
             image: burger7
         }
     ])
-    return (
-        <CartContext.Provider value={[products, setCart, cart, setProducts, addToCart, setCartToggle, cartToggle]}>{children}</CartContext.Provider>
-    )
+  return (
+    <CartContext.Provider value={[products, setCart, cart, setProducts]}>{children}</CartContext.Provider>
+  )
 }
 
 export default CartContextProvider

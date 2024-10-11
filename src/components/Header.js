@@ -61,6 +61,7 @@ const Header = () => {
                 !prev
               )} className='text-xl text-white relative'/><span className='absolute rounded-full px-1 text-[12px] bottom-2 right-3 bg-slate-100 black'>{cart.length}</span>
           </div>
+          
           {/* Sidebar */}
           <Sidebar/>
 

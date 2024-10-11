@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import {products} from "../constants/products"
 import ProductList from './ProductList'
 import styles from '../constants/style'
 import { CartContext } from '../contexts/CartContext'
