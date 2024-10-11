@@ -25,7 +25,7 @@ const ProductDetails = () => {
       <Header/>
       <div id="productDetails" className={`pt-[100px] container flex flex-col sm:gap-20 sm:flex-col md:flex-col justify-between lg:flex-col z-20 leading-7 xl:flex-row font-poppins xl:px-10`}>
 
-        <div class="">
+        <div className="">
           {/* Gradient */}
         <div className='absolute z-[0] w-[50%] h-[50%] left-10 bottom-0 top-10 blue__gradient md:bottom-0 md:absolute'></div>
           <img className='z-[10] relative p-10 xl:mt-20 xl:w-[500px]' alt="" src={product.image}/>

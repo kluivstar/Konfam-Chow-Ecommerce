@@ -7,8 +7,8 @@ const ProductCard = () => {
   const [products, setProducts] = useContext(CartContext)
   return (
     <section className={`bg-gray-200 ${styles.paddingY} ${styles.paddingX} m-auto text-center`}>
-      <div class="p-10 z-[30">
-        <h1 class="">Glance at our menu:</h1>
+      <div className="p-10 z-[30">
+        <h1 className="">Glance at our menu:</h1>
       </div>
       <div className={`flex sm:flex-row justify-center gap-10 flex-wrap m-auto items-center`} >
           {products.map((product) => 
