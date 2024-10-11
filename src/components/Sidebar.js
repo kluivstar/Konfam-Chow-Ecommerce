@@ -1,9 +1,44 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
+import { CartContext } from '../contexts/CartContext'
 const Sidebar = () => {
-  return (
-    <div>Sidebar</div>
-  )
+      // Gets the products and cart from context
+    const [cart, setCart, cartToggle, setCartToggle] = useContext(CartContext)
+    return (
+        <section className=''>
+            <div
+                className={`${
+                cartToggle ? "flex" : "hidden"
+                } absolute flex-col w-[400px] right-1 p-5 top-20 transition-all bg-primary`} 
+                // Set max height and enable vertical scrolling
+                style={{ maxHeight: '80vh', overflowY: 'auto' }}
+            >
+                
+                {cart.length > 0 ? (
+                    cart.map((item) => (
+                        <div className='flex flex-row bg-primary p-10 gap-10'>
+                            <div class="">
+                                <img className='w-[700px]' alt='' src={item.image}/>
+                            </div>
+                            <div class="">
+                                <h1 className='text-slate-50 text-[19px]'>{item.title}</h1>
+                                <span>{item.description}</span>
+                                <div>
+                                    <div>
+                                        <button type="" class="">Count</button>
+                                        <button type="" class=""></button>
+                                    </div>
+                                    <span>{item.price}</span>
+                                </div>
+                            </div>
+                        </div>
+                        ))
+                ) : (
+                    <div className='text-center text-white'>Your cart is empty.</div>
+                  )}
+                </div>
+                
+        </section>
+    )
 }
 
 export default Sidebar

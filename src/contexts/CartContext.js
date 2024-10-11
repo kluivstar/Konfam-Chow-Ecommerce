@@ -17,6 +17,9 @@ const CartContextProvider = ({children}) => {
     // State for cart
     const [cart, setCart] = useLocalStorageState("cart", { defaultValue: []})
 
+    // Cart toggle
+    const [cartToggle, setCartToggle] = useState(false)
+
     // Function to add a product to cart
     const addToCart = (product) => {
         setCart((prevCart) => [...prevCart, product])
@@ -85,9 +88,9 @@ const CartContextProvider = ({children}) => {
             image: burger7
         }
     ])
-  return (
-    <CartContext.Provider value={[products, setCart, cart, setProducts, addToCart]}>{children}</CartContext.Provider>
-  )
+    return (
+        <CartContext.Provider value={[products, setCart, cart, setProducts, addToCart, setCartToggle, cartToggle]}>{children}</CartContext.Provider>
+    )
 }
 
 export default CartContextProvider

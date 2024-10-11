@@ -19,7 +19,7 @@ const ProductDetails = () => {
   return (
     <div>
       <Header/>
-      <div id="productDetails" className={`pt-[100px] container flex flex-col sm:gap-20 sm:flex-col md:flex-col justify-between lg:flex-col z-30 leading-7 xl:flex-row font-poppins xl:px-10`}>
+      <div id="productDetails" className={`pt-[100px] container flex flex-col sm:gap-20 sm:flex-col md:flex-col justify-between lg:flex-col z-20 leading-7 xl:flex-row font-poppins xl:px-10`}>
 
         <div class="">
           {/* Gradient */}

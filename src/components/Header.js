@@ -11,13 +11,14 @@ import Logo from '../assets/logo-white.png'
 import menu from '../assets/menu.svg'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../contexts/CartContext'
+import Sidebar from './Sidebar'
 
 const Header = () => {
   const [toggle, setToggle] = useState(false)
   const [isActive, setIsActive] = useState(false)
   
   // Import Cart Context
-  const [products, setProducts, cart, setCart, addToCart] = useContext(CartContext)
+  const [ cart,setCartToggle ] = useContext(CartContext)
   
   /// ///Here header color change on scroll
   useEffect(() => {
@@ -37,7 +38,7 @@ const Header = () => {
   
   return (
     <nav 
-     className={`${styles.paddingX} w-full transition fixed top-0 z-20 ${isActive ? "bg-slate-800 " : "bg-primary"} transition `}>
+      className={`${styles.paddingX} w-full transition fixed top-0 z-20 ${isActive ? "bg-slate-800 " : "bg-primary"} transition `}>
         <div className='flex items-center flex-row justify-between'>
 
           {/* Logo */}
@@ -56,17 +57,21 @@ const Header = () => {
 
           {/* Cart logo */}
           <div className='absolute sm:relative font-poppins flex sm:top-0 right-16 top-9'>
-              <BsBag className='text-xl text-white relative'/><span className='absolute rounded-full px-1 text-[12px] bottom-2 right-3 bg-slate-100 black'>{cart.length}</span>
+              <BsBag onClick={() => setCartToggle((prev) => 
+                !prev
+              )} className='text-xl text-white relative'/><span className='absolute rounded-full px-1 text-[12px] bottom-2 right-3 bg-slate-100 black'>{cart.length}</span>
           </div>
-          
+          {/* Sidebar */}
+          <Sidebar/>
+
           {/* Mobile menu image */}
-          
           {/* if state is !prev "close img" displays" : menu is displayed(which is the default) */}
           <div className='sm:hidden flex justify-end items-center'>
             <img className='p-2 transition-all' alt='' onClick={() => setToggle((prev) => 
-               !prev
+                !prev
               )} src={toggle ? close : menu }/>
           </div>
+          
           {/* Mobile menu */}
           {/* if state is !prev "sidebar displays" : sidebar is hidden(which is the default) */}
           <div className={`${toggle ? "flex" : "hidden"} ${isActive ? "bg-slate-800 " : "bg-primary"}sm:hidden w-full leading-10 p-6 rounded-sm top-24 absolute bg-primary transition duration-300 cursor-pointer text-white `}>
